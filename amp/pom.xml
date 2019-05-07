@@ -1,7 +1,99 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.coodman</groupId>
-  <artifactId>amp</artifactId>
-  <version>1.0</version>
-  <packaging>pom</packaging>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:schemaLocation="http://maven.apache.org/POM/4.0.0          
+								http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  	<groupId>cn.kgc</groupId>
+  	<artifactId>amp</artifactId>
+  	<version>1.0</version>
+  	<packaging>pom</packaging>
+  	
+  	<properties>
+  		<spring.version>5.1.0.RELEASE</spring.version>
+  		<mysql-connector-java.version>8.0.16</mysql-connector-java.version>
+  		<mybatis.version>3.5.1</mybatis.version>
+  		<mybatis-spring.version>2.0.1</mybatis-spring.version>
+  		<druid.version>1.1.16</druid.version>
+  		<jackson.version>2.9.8</jackson.version>
+  	</properties>
+  	
+  	<dependencies>
+  		<!-- 添加Spring MVC依赖关系[BEGIN] -->
+  		<dependency>
+  			<groupId>org.springframework</groupId>
+  			<artifactId>spring-webmvc</artifactId>
+  			<version>${spring.version}</version>
+  		</dependency>
+  		<!-- 添加Spring MVC依赖关系[END] -->
+  		
+  		<!-- 添加Spring JDBC依赖关系[BEGIN] -->
+  		<dependency>
+  			<groupId>org.springframework</groupId>
+  			<artifactId>spring-jdbc</artifactId>
+  			<version>${spring.version}</version>
+  		</dependency>
+  		<!-- 添加Spring JDBC依赖关系[END] -->
+  		
+  		<!-- 添加MySQL数据库连接驱动依赖关系[BEGIN] -->
+  		<dependency>
+  			<groupId>mysql</groupId>
+  			<artifactId>mysql-connector-java</artifactId>
+  			<version>${mysql-connector-java.version}</version>
+  		</dependency>
+  		<!-- 添加MySQL数据库连接驱动依赖关系[END] -->
+  		
+  		<!-- 添加Mybatis以及Mybatis和Spring结合的依赖关系[BEGIN] -->
+  		<dependency>
+  			<groupId>org.mybatis</groupId>
+  			<artifactId>mybatis</artifactId>
+  			<version>${mybatis.version}</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.mybatis</groupId>
+  			<artifactId>mybatis-spring</artifactId>
+  			<version>${mybatis-spring.version}</version>
+  		</dependency>
+  		<!-- 添加Mybatis以及Mybatis和Spring结合的依赖关系[END] -->
+  		
+  		<!-- 添加Druid数据库连接池依赖关系[BEGIN] -->
+  		<dependency>
+  			<groupId>com.alibaba</groupId>
+  			<artifactId>druid</artifactId>
+  			<version>${druid.version}</version>
+  		</dependency>
+  		<!-- 添加Druid数据库连接池依赖关系[END] -->
+  		
+  		<!-- 添加jackson依赖关系[BEGIN] -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+  		<!-- 添加jackson依赖关系[END] -->
+  		
+  		<!-- 添加Servlet、JSP以及JSTL依赖关系[BEGIN] -->
+  		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>javax.servlet.jsp</groupId>
+		    <artifactId>javax.servlet.jsp-api</artifactId>
+		    <version>2.3.3</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>jstl</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
+		</dependency>
+  		<!-- 添加Servlet、JSP以及JSTL依赖关系[END] -->
+  	</dependencies>
+  	
+  	<modules>
+  		<module>amp-commons</module>
+  	</modules>
 </project>
