@@ -4,7 +4,7 @@
 			xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
 								http://maven.apache.org/xsd/maven-4.0.0.xsd">
   	<modelVersion>4.0.0</modelVersion>
-  	<artifactId>amp-commons</artifactId>
+  	<artifactId>amp-dao</artifactId>
   
   	<parent>
   		<groupId>com.coodman</groupId>
@@ -19,6 +19,14 @@
   	</properties>
 
   	<dependencies>
+  		<!-- 添加amp-commons模块依赖关系[BEGIN] -->
+  		<dependency>
+  			<groupId>com.coodman</groupId>
+  			<artifactId>amp-commons</artifactId>
+  			<version>${version}</version>
+  		</dependency>
+  		<!-- 添加amp-commons模块依赖关系[END] -->
+  	
 	    <dependency>
 	      	<groupId>junit</groupId>
 	      	<artifactId>junit</artifactId>
