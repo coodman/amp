@@ -97,5 +97,6 @@
   		<module>amp-commons</module>
   		<module>amp-dao</module>
   		<module>amp-service</module>
+  		<module>amp-controller</module>
   	</modules>
 </project>
