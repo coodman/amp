@@ -39,6 +39,7 @@
 	<!-- 配置Mybatis的SqlSessionFactory信息[BEGIN] -->
 	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
+		<property name="typeAliasesPackage" value="com.coodman.amp.beans.entity"/>
 		<property name="mapperLocations" value="classpath*:/mapper/*.mapper.xml"/>
 	</bean>
 	<!-- 配置Mybatis的SqlSessionFactory信息[END] -->
@@ -46,7 +47,7 @@
 	<!-- 配置Mybatis数据持久层接口扫描信息[BEGIN] -->
 	<bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
-		<property name="basePackage" value="com.coodman.amp.*.dao"/>
+		<property name="basePackage" value="com.coodman.amp.dao"/>
 	</bean>
 	<!-- 配置Mybatis数据持久层接口扫描信息[END] -->
 	

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coodman.amp.dao.DeveloperDao">
+	<!-- 按照条件查询列表 -->
+	<select id="findDeveloperListByQuery" parameterType="java.util.Map" resultMap="developerMap">
+		select
+			dev_id,
+			dev_no,
+			dev_name,
+			password,
+			cellphone,
+			email,
+			dev_info,
+			create_date,
+			update_date
+		from
+			sys_dev
+		where
+			<if test="devNo != null">dev_no=#{devNo} and</if>
+			1=1
+	</select>
+	
+	<insert id="saveDeveloper" parameterType="Developer" useGeneratedKeys="true" keyProperty="devId">
+		insert into sys_dev(
+			dev_name, password, cellphone, email, dev_info) 
+		values(
+			#{devName}, #{password}, #{cellphone}, #{email}, #{devInfo})
+	</insert>
+	
+	<update id="updateDevloper" parameterType="Developer">
+		update sys_dev set
+			dev_no=#{devNo},
+			dev_name=#{devName},
+			password=#{password},
+			cellphone=#{cellphone},
+			email=#{email},
+			dev_info=#{devInfo}
+		where
+			dev_id=#{devId}
+	</update>
+	
+	<resultMap type="Developer" id="developerMap">
+		<id property="devId" javaType="java.lang.Long" column="dev_id"/>
+		<result property="devNo" javaType="java.lang.String" column="dev_no"/>
+		<result property="devName" javaType="java.lang.String" column="dev_name"/>
+		<result property="password" javaType="java.lang.String" column="password"/>
+		<result property="cellphone" javaType="java.lang.String" column="cellphone"/>
+		<result property="email" javaType="java.lang.String" column="email"/>
+		<result property="devInfo" javaType="java.lang.String" column="dev_info"/>
+		<result property="createDate" javaType="java.util.Date" column="create_date"/>
+		<result property="updateDate" javaType="java.util.Date" column="update_date"/>
+	</resultMap>
+</mapper>
